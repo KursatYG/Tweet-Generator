@@ -1,0 +1,198 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica', Arial, sans-serif;
+  outline: 0;
+}
+
+$tweet-border-color: #2f3336;
+$tweet-text-color: #6e767d;
+
+html,
+body {
+  background: black;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.tweet-settings {
+  flex: 1;
+  color: white;
+  border-right: 1px solid $tweet-border-color;
+  height: 100%;
+  padding: 25px;
+  overflow: auto;
+  label {
+    color: $tweet-text-color;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 5px;
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: normal;
+    border-bottom: 1px solid $tweet-border-color;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  ul {
+    li:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    button {
+      width: 100%;
+      height: 40px;
+      border-bottom: 1px solid $tweet-border-color;
+      font-size: 16px;
+      color: white;
+      padding: 10px;
+      background: #1da1f2;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+  }
+
+  .input {
+    width: 100%;
+    background: transparent;
+    border-bottom: 1px solid $tweet-border-color;
+    color: #fff;
+    padding: 10px 0 15px;
+
+    &::placeholder {
+      font-size: 15px;
+    }
+    &:focus {
+      border-color: #224e75;
+    }
+  }
+  select {
+    width: 100%;
+    background: transparent;
+    color: #fff;
+    padding: 10px 0 15px;
+    option {
+      background: #000;
+      color: #fff;
+    }
+    &::placeholder {
+      font-size: 15px;
+    }
+    &:focus {
+      border-color: #224e75;
+    }
+  }
+  .textarea {
+    resize: none;
+  }
+  .download-url {
+    display: none;
+  }
+  p{
+    padding-top: 10px;
+    color: $tweet-text-color;
+    display: flex;
+    justify-content: center;
+    span{
+      font-weight: bold;
+    }
+  }
+}
+.tweet-container {
+  padding: 0 50px;
+}
+
+.tweet {
+  border: 1px solid $tweet-border-color;
+  width: 600px;
+  margin: 25px auto;
+  padding: 0 16px;
+  background: #000;
+  &-author {
+    height: 48px;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    font-size: 15px;
+    img {
+      height: 48px;
+      width: 48px;
+      margin-right: 12px;
+      border-radius: 50%;
+    }
+    .name {
+      color: white;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+
+      svg {
+        margin-left: 3px;
+      }
+    }
+    .username {
+      color: $tweet-text-color;
+    }
+  }
+  &-content {
+    padding-top: 12px 0;
+    p {
+      font-size: 23px;
+      line-height: 28px;
+      color: white;
+      overflow-wrap: break-word;
+      span {
+        color: #1da1f2;
+      }
+    }
+  }
+  &-stats {
+    height: 53px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: $tweet-text-color;
+    b {
+      color: white;
+    }
+    span:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+  &-actions {
+    height: 48px;
+    display: flex;
+    border-top: 1px solid $tweet-border-color;
+    color: white;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #root {
+    display: block;
+    align-items: center;
+    height: 100%;
+  }
+  .tweet-container {
+    padding: 0 10px;
+  }
+  .tweet {
+    border: 1px solid $tweet-border-color;
+    width: 350px;
+    margin: 25px auto;
+    padding: 0 16px;
+    background: #000;
+  }
+}
